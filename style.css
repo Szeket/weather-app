@@ -1,0 +1,80 @@
+body {
+  background: url(file:///home/oszka/Desktop/shecodes/app/media/background.jpg)
+    no-repeat center center fixed;
+  background-size: cover;
+
+  font-family: "Azeret Mono", monospace;
+}
+h1 {
+  text-align: left;
+}
+#form-input,
+h1 {
+  text-transform: capitalize;
+}
+button {
+  margin-top: -45px;
+}
+.container {
+  background-color: #e8f1f0;
+  border-style: groove;
+  max-width: 40%;
+  padding: 30px 30px;
+  margin-top: 120px;
+  border-radius: 20px;
+}
+
+.card-body,
+.card {
+  background-color: #7aaba6;
+  border-radius: 20px;
+  border-style: groove;
+}
+
+.current-weather-icon {
+  text-align: right;
+  font-size: 90px;
+  color: #0b5ed7;
+  transition: all 0.2s ease-in-out;
+  padding-bottom: 20px;
+}
+.current-weather-icon:hover {
+  transform: scale(1.1);
+}
+.current-weather {
+  text-align: right;
+  font-size: 16px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+.day {
+  font-size: 20px;
+}
+
+.forecast {
+  padding-bottom: 30px;
+  font-size: 15px;
+  text-align: center;
+}
+.monday-icon,
+.tuesday-icon,
+.wednesday-icon,
+.thursday-icon,
+.friday-icon {
+  font-size: 45px;
+}
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.5);
+}
+footer {
+  font-family: monospace;
+  text-align: center;
+}
