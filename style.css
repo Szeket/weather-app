@@ -1,5 +1,5 @@
 body {
-  background: url(file://home/oszka/weather-app/media/background.jpg) no-repeat
+  background: url(file:///home/oszka/weather-app/media/background.jpg) no-repeat
     center center fixed;
   background-size: cover;
 
@@ -16,7 +16,7 @@ button {
   margin-top: -45px;
 }
 .container {
-  background-color: #e8f1f0;
+  background-color: #c4dad7;
   border-style: groove;
   max-width: 40%;
   padding: 30px 30px;
