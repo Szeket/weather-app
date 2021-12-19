@@ -29,6 +29,7 @@ function showTemperature(response) {
     response.data.weather[0].description;
 
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
+  let city = "Coimbra";
   document.querySelector("h1").innerHTML = response.data.name;
 }
 
