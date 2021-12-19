@@ -1,5 +1,5 @@
 body {
-  background: url(file:///home/oszka/weather-app/media/background.jpg) no-repeat
+  background: url(file://home/oszka/weather-app/media/background.jpg) no-repeat
     center center fixed;
   background-size: cover;
 
