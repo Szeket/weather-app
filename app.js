@@ -19,6 +19,11 @@ let days = [
 dateTime.innerHTML = `${days[dayIndex]}, ${hours}:${minutes}`;
 
 function showTemperature(response) {
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -29,12 +34,15 @@ function showTemperature(response) {
     response.data.weather[0].description;
 
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
-  let city = "Coimbra";
+
   document.querySelector("h1").innerHTML = response.data.name;
+
+  //document.querySelector("#icon").innerHTML = response.data.weather[0].icon;
 }
 
 function searchCity(event) {
   event.preventDefault();
+
   let apiKey = "0517d60033ca170380a3d6540e3a62e0";
   let city = document.querySelector("#form-input").value;
   let units = "metric";
