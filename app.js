@@ -24,6 +24,7 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
   document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -36,18 +37,20 @@ function showTemperature(response) {
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
 
   document.querySelector("h1").innerHTML = response.data.name;
-
-  //document.querySelector("#icon").innerHTML = response.data.weather[0].icon;
 }
 
 function searchCity(event) {
   event.preventDefault();
 
-  let apiKey = "0517d60033ca170380a3d6540e3a62e0";
   let city = document.querySelector("#form-input").value;
+
+  search(city);
+}
+
+function search(city) {
+  let apiKey = "0517d60033ca170380a3d6540e3a62e0";
   let units = "metric";
   let endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
   axios.get(endpoint).then(showTemperature);
 }
 
@@ -86,3 +89,5 @@ function convertToCelsius(event) {
 }
 let celsiusTemperature = document.querySelector("#celsius-link");
 celsiusTemperature.addEventListener("click", convertToCelsius);
+
+search("Paredes de Coura");
