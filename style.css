@@ -49,8 +49,13 @@ button {
 .day {
   font-size: 20px;
 }
-#fahrenheit-link {
+
+a {
   text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: blue;
 }
 .forecast {
   padding-bottom: 30px;
