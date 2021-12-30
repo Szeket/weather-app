@@ -47,6 +47,9 @@ button {
   padding-bottom: 20px;
   padding-right: 30px;
 }
+#celsius-link {
+  color: black;
+}
 
 a {
   text-decoration: none;

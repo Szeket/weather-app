@@ -18,6 +18,34 @@ let days = [
 
 dateTime.innerHTML = `${days[dayIndex]}, ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector(".forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col monday">
+                <div class="day">${day}</div>
+              
+                <div class="monday-icon">
+                  <img src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt=""
+              />
+                  
+                </div>
+              
+                <span class="monday-temp">21°C/11°C</span>
+                </div>
+                `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -91,3 +119,5 @@ let celsiusTemperature = document.querySelector("#celsius-link");
 celsiusTemperature.addEventListener("click", convertToCelsius);
 
 search("Paredes de Coura");
+
+displayForecast();
