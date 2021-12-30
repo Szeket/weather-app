@@ -62,20 +62,7 @@ a:hover {
   font-size: 15px;
   text-align: center;
 }
-.monday-icon,
-.tuesday-icon,
-.wednesday-icon,
-.thursday-icon,
-.friday-icon {
-  font-size: 45px;
-}
-.grow {
-  transition: all 0.2s ease-in-out;
-}
 
-.grow:hover {
-  transform: scale(1.5);
-}
 footer {
   font-family: monospace;
   text-align: center;
