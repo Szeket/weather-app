@@ -18,7 +18,8 @@ let days = [
 
 dateTime.innerHTML = `${days[dayIndex]}, ${hours}:${minutes}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector(".forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -44,6 +45,15 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "0517d60033ca170380a3d6540e3a62e0";
+  endpoint = `
+  https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(endpoint);
+  axios.get(endpoint).then(displayForecast);
+}
+
 function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -63,6 +73,7 @@ function showTemperature(response) {
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
 
   document.querySelector("h1").innerHTML = response.data.name;
+  getForecast(response.data.coord);
 }
 
 function searchCity(event) {
@@ -126,5 +137,3 @@ let celsiusTemperature = document.querySelector("#celsius-link");
 celsiusTemperature.addEventListener("click", convertToCelsius);
 
 search("Paredes de Coura");
-
-displayForecast();

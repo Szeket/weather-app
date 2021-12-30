@@ -49,7 +49,9 @@ button {
 .day {
   font-size: 20px;
 }
-
+#fahrenheit-link {
+  text-decoration: none;
+}
 .forecast {
   padding-bottom: 30px;
   font-size: 15px;
