@@ -33,10 +33,8 @@ function displayForecast() {
                 <div class="monday-icon">
                   <img src="http://openweathermap.org/img/wn/10d@2x.png"
               alt=""
-              />
-                  
+              />  
                 </div>
-              
                 <span class="monday-temp">21°C/11°C</span>
                 </div>
                 `;
@@ -99,11 +97,17 @@ function getCurrentPosition() {
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
 
+// Default is celsius
+let isFahrenheit = false;
+
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temperature = document.querySelector("#temp");
-  let fahrenheitTemperature = (temperature.innerHTML * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(fahrenheitTemperature);
+  if (isFahrenheit !== true) {
+    let temperature = document.querySelector("#temp");
+    let fahrenheitTemperature = (temperature.innerHTML * 9) / 5 + 32;
+    temperature.innerHTML = Math.round(fahrenheitTemperature);
+    isFahrenheit = true;
+  }
 }
 
 let fahrenheitTemperature = document.querySelector("#farenheit-link");
@@ -111,9 +115,12 @@ fahrenheitTemperature.addEventListener("click", convertToFahrenheit);
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let temperature = document.querySelector("#temp");
-  let celsiusTemperature = ((temperature.innerHTML - 32) * 5) / 9;
-  temperature.innerHTML = Math.round(celsiusTemperature);
+  if (isFahrenheit === true) {
+    let temperature = document.querySelector("#temp");
+    let celsiusTemperature = ((temperature.innerHTML - 32) * 5) / 9;
+    temperature.innerHTML = Math.round(celsiusTemperature);
+    isFahrenheit = false;
+  }
 }
 let celsiusTemperature = document.querySelector("#celsius-link");
 celsiusTemperature.addEventListener("click", convertToCelsius);
